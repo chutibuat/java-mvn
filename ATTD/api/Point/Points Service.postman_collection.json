@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "a50872d8-7554-4aea-9d50-c06c1cb7f7ac",
+		"name": "Points Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "when total price is 239.90 THB then nomal points should be 23 points",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "914082e1-38bd-4f03-9bdd-274a5041f4e1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response normalPoints should be 23 points\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.normalPoints).to.eql(23);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8080/api/v1/points?totalPrices=239.90&=",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"points"
+					],
+					"query": [
+						{
+							"key": "totalPrices",
+							"value": "239.90"
+						},
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
