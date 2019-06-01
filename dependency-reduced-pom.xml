@@ -31,7 +31,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>sck.shoppingCart.App</mainClass>
+                  <mainClass>wlb.App</mainClass>
                 </transformer>
               </transformers>
               <artifactSet>
